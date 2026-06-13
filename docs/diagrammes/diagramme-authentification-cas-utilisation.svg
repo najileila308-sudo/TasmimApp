@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .boundary { fill: #eef6ff; stroke: #2b6ecb; stroke-width: 4; }
+      .title { font-family: Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #133a68; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; fill: #2563eb; }
+      .label { font-family: Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #183b5d; }
+      .use { fill: #dcecff; stroke: #2f6fe8; stroke-width: 2.5; }
+      .useText { font-family: Arial, sans-serif; font-size: 20px; fill: #0f49c6; }
+      .actor { stroke: #24384f; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .assoc { stroke: #5e7088; stroke-width: 2.2; fill: none; }
+      .dash { stroke: #778899; stroke-width: 2.2; fill: none; stroke-dasharray: 8 7; marker-end: url(#arrow); }
+      .gen { stroke: #24384f; stroke-width: 2.7; fill: none; marker-end: url(#triangle); }
+      .sys { fill: #fff4d8; stroke: #f59e0b; stroke-width: 3; }
+      .sysText { font-family: Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #9a4b00; }
+      .small { font-family: Arial, sans-serif; font-size: 17px; fill: #34495e; }
+      .legend { fill: #ffffff; stroke: #b8c3d1; stroke-width: 1.5; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#778899"/>
+    </marker>
+    <marker id="triangle" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#ffffff" stroke="#24384f" stroke-width="1.8"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="980" class="bg"/>
+  <text x="750" y="52" text-anchor="middle" class="title">Diagramme de Cas d'Utilisation — Module d'Authentification</text>
+
+  <rect x="285" y="88" width="880" height="850" rx="18" class="boundary"/>
+  <text x="725" y="132" text-anchor="middle" class="subtitle">TasmimApp</text>
+
+  <!-- Legend -->
+  <rect x="900" y="128" width="250" height="116" rx="8" class="legend"/>
+  <line x1="928" y1="160" x2="990" y2="160" class="assoc"/>
+  <text x="1010" y="166" class="small">acteur → cas</text>
+  <line x1="928" y1="198" x2="990" y2="198" class="dash"/>
+  <text x="1010" y="204" class="small">utilise Supabase</text>
+  <line x1="928" y1="232" x2="990" y2="232" class="gen"/>
+  <text x="1010" y="238" class="small">généralisation</text>
+
+  <!-- Actors -->
+  <g transform="translate(145,255)">
+    <circle cx="0" cy="0" r="22" class="actor"/>
+    <line x1="0" y1="22" x2="0" y2="102" class="actor"/>
+    <line x1="-55" y1="55" x2="55" y2="55" class="actor"/>
+    <line x1="0" y1="102" x2="-45" y2="170" class="actor"/>
+    <line x1="0" y1="102" x2="45" y2="170" class="actor"/>
+    <text x="0" y="215" text-anchor="middle" class="label">Visiteur</text>
+  </g>
+
+  <g transform="translate(145,665)">
+    <circle cx="0" cy="0" r="22" class="actor"/>
+    <line x1="0" y1="22" x2="0" y2="102" class="actor"/>
+    <line x1="-55" y1="55" x2="55" y2="55" class="actor"/>
+    <line x1="0" y1="102" x2="-45" y2="170" class="actor"/>
+    <line x1="0" y1="102" x2="45" y2="170" class="actor"/>
+    <text x="0" y="215" text-anchor="middle" class="label">Utilisateur</text>
+    <text x="0" y="240" text-anchor="middle" class="label">authentifié</text>
+  </g>
+
+  <!-- Generalization: authenticated user inherits visitor -->
+  <line x1="145" y1="665" x2="145" y2="445" class="gen"/>
+
+  <!-- Use cases -->
+  <ellipse cx="560" cy="250" rx="170" ry="48" class="use"/>
+  <text x="560" y="257" text-anchor="middle" class="useText">Créer un compte</text>
+
+  <ellipse cx="560" cy="365" rx="170" ry="48" class="use"/>
+  <text x="560" y="372" text-anchor="middle" class="useText">Se connecter</text>
+
+  <ellipse cx="820" cy="305" rx="185" ry="48" class="use"/>
+  <text x="820" y="312" text-anchor="middle" class="useText">Se connecter par email</text>
+
+  <ellipse cx="820" cy="425" rx="185" ry="48" class="use"/>
+  <text x="820" y="420" text-anchor="middle" class="useText">Se connecter avec</text>
+  <text x="820" y="444" text-anchor="middle" class="useText">Google ou Facebook</text>
+
+  <ellipse cx="560" cy="545" rx="190" ry="48" class="use"/>
+  <text x="560" y="538" text-anchor="middle" class="useText">Réinitialiser le</text>
+  <text x="560" y="562" text-anchor="middle" class="useText">mot de passe</text>
+
+  <ellipse cx="560" cy="735" rx="170" ry="48" class="use" style="fill:#d9fff4; stroke:#12a889;"/>
+  <text x="560" y="742" text-anchor="middle" class="useText" style="fill:#087f6b;">Se déconnecter</text>
+
+  <!-- External system -->
+  <rect x="1240" y="355" width="185" height="158" rx="14" class="sys"/>
+  <text x="1332" y="395" text-anchor="middle" class="sysText">« système »</text>
+  <text x="1332" y="435" text-anchor="middle" class="sysText" style="font-size:26px;">Supabase</text>
+  <text x="1332" y="468" text-anchor="middle" class="sysText" style="font-size:17px;">Auth</text>
+  <text x="1332" y="495" text-anchor="middle" class="small">externe</text>
+
+  <!-- Associations -->
+  <line x1="200" y1="310" x2="395" y2="250" class="assoc"/>
+  <line x1="200" y1="310" x2="395" y2="365" class="assoc"/>
+  <line x1="200" y1="310" x2="380" y2="545" class="assoc"/>
+  <line x1="200" y1="720" x2="395" y2="735" class="assoc"/>
+
+  <!-- Connect variants -->
+  <line x1="700" y1="345" x2="650" y2="327" class="assoc"/>
+  <line x1="700" y1="405" x2="650" y2="388" class="assoc"/>
+  <line x1="650" y1="365" x2="700" y2="305" class="assoc"/>
+  <line x1="650" y1="365" x2="700" y2="425" class="assoc"/>
+
+  <!-- Supabase dependencies -->
+  <line x1="730" y1="250" x2="1240" y2="405" class="dash"/>
+  <line x1="1005" y1="305" x2="1240" y2="420" class="dash"/>
+  <line x1="1005" y1="425" x2="1240" y2="445" class="dash"/>
+  <line x1="750" y1="545" x2="1240" y2="465" class="dash"/>
+
+  <text x="905" y="238" class="small">utilise</text>
+  <text x="1085" y="350" class="small">utilise</text>
+  <text x="1095" y="434" class="small">utilise</text>
+  <text x="935" y="535" class="small">utilise</text>
+</svg>
