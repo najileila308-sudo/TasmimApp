@@ -1,6 +1,6 @@
 # Tasmim App 📱✨
 
-[![EAS Build](https://byg.eas.expo.dev/build/400cfea4-f3ee-4ec6-afb0-24d0288de464.svg)](https://expo.dev/preview)
+[![EAS Build](https://img.shields.io/badge/EAS_Build-Android_APK-4630EB?style=flat&logo=expo)](https://expo.dev)
 [![Expo SDK 54](https://img.shields.io/badge/Expo-SDK_54.0.34-000000?style=flat&logo=expo)](https://expo.dev)
 [![React Native 0.81.5](https://img.shields.io/badge/React_Native-0.81.5-61DAFB?style=flat&logo=react)](https://reactnative.dev)
 [![TypeScript 5.9.2](https://img.shields.io/badge/TypeScript-5.9.2-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org)
